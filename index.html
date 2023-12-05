@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHome - TRT</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>波吉王子 製</p>
+        <!-- 第一個下拉選單 -->
+        <label for="typeSelectBefore">選擇類型：</label>
+        <select id="typeSelectBefore" onchange="updateInfo('before')">
+          <!-- 動態生成選項 -->
+        </select>
+      
+        <p>換</p>
+      
+        <!-- 第二個下拉選單 -->
+        <label for="typeSelectAfter">選擇類型：</label>
+        <select id="typeSelectAfter" onchange="updateInfo('after')">
+          <!-- 動態生成選項 -->
+        </select>
+        
+        <p><button onclick="submit()">計算</button></p>
+        
+        <p>結果 1</p>
+        <p id="result"></p>
+        <p>結果 1組</p>
+        <p id="result2"></p>
+    </div>
+</body>
+
+</html>
+
+<script src="./data.js"></script>
+<script src="./main.js"></script>
