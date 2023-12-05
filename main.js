@@ -40,9 +40,17 @@ function updateInfo(state) {
 
 // 選項改變時更新資訊
 function submit() {
+    //const exchangeRatio = (beforeTime * afterQuantity) / (afterTime * beforeQuantity);
     const exchangeRatio = (beforeTime * 1) / (afterTime * 1);
     const result = document.getElementById('result');
     const result2 = document.getElementById('result2');
-    result.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： 1  :  ${exchangeRatio.toFixed(2)}</p>`;
-    result2.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： 1組  :  ${exchangeRatio.toFixed(2)*99}</p>`;
+    if (exchangeRatio < 1) {
+        const multiplier = 1 / exchangeRatio;
+        result.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： ${multiplier.toFixed(0)} : 1</p>`;
+        result2.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： ${multiplier.toFixed(0) * 99} : 1組 </p>`;
+    } else {
+        result.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： 1  :  ${exchangeRatio.toFixed(0)}</p>`;
+        result2.innerHTML = `<p>${beforeType} 可以換取 ${afterType} 的比例為： 1組  :  ${exchangeRatio.toFixed(0)*99}</p>`;
+    }
 }
+
