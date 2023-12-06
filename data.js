@@ -156,6 +156,11 @@ const data = [
   },
   {
     type: "鐵",
+    time: 5400,
+    quantity: 5,
+  },
+  {
+    type: "鹽",
     time: 9000,
     quantity: 5,
   },
